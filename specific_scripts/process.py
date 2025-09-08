@@ -50,6 +50,8 @@ df["hire_position_location"] = df["hire_position_location"].apply(
 df["number_role"] = df["number_role"].astype(int)
 
 df = df.replace("‚Äô", "'", regex=True)
+df = df.replace("‚Äã", "", regex=True)
+df = df.replace("√©", "é", regex=True)
 df.loc[df["pi_add"] == "No", "pi_name"] = ""
 
 
