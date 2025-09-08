@@ -120,3 +120,22 @@ token.*
 tokens.*
 token/
 tokens/
+
+
+# Unignore JSON config and manifest files
+!/**/*.json
+
+# Unignore YAML files (only if you’re OK with including them)
+!/**/*.yaml
+!/**/*.yml
+
+# Unignore Excel files
+!/**/*.xls
+!/**/*.xlsx
+
+# Unignore Streamlit folders and app folders (adjust to your structure)
+!application_dash/**
+!streamlit_app/**
+
+# Unignore other useful folders for dashboards or UIs
+!custom_ui/**

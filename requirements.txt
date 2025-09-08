@@ -1,0 +1,8 @@
+pandas
+streamlit
+openpyxl
+pyyaml
+python-dotenv
+pysurveycto
+streamlit-aggrid==1.1.6 
+pycountry

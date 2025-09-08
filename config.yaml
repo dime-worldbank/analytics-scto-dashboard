@@ -1,0 +1,51 @@
+info:
+  title: DIME Recruitment Dashboard
+  description: |
+    ## DIME STC Recruitment Drive
+    DIME is now hiring **Short Term Consultants (STCs)** to work as Research Assistants and Field Coordinators for **15 open positions across 12 projects.** These roles provide recent master's-level graduates and working professionals opportunities to improve public policy on the basis of better data and research.  
+
+    Eligible candidates must hold at least a master's-level degree in economics, public policy or a related field. Additional impact evaluation experience is preferred, but not required. [Click here](#) to see detailed Terms of Reference for these positions.  
+
+    For specific details on each project, navigate to the **Open Positions** tab from the top navigation. You can **doubleclick** on each position in the table to view details.
+
+    *_⚠️ **NOTE:** The deadline to submit your applications for this round of recruitment is **October 2nd 2025, 1 PM Eastern Daylight Time.**_*
+
+
+    ---
+    ## How do I use this dashboard to apply?
+    1. Navigate to the **Open Positions** tab to see details about each of the open positions, as well as required skills.  
+    2. After you have identified the roles of your interest, you will need to submit your application using [this application form](#).  
+
+    ---
+    ## About DIME
+    The objective of the World Bank's Development Impact (DIME) department is to increase the use of data analytics and impact evaluation research in the design and implementation of public policy, to increase the effectiveness of development investments, strengthen country institutions for evidence-based policy making, and generate knowledge in strategic development areas.  
+
+    DIME's diverse portfolio offers interns and consultants the opportunity to contribute to projects across all development sectors, including **agriculture, public sector governance, climate change (energy, environment and water), financial & private sector, human development, entertainment education, transport, trade, gender, and fragility, conflict and violence.**
+
+
+    
+
+
+tabs:
+  - name: Open positions
+    key: pos
+    source_type: form
+    source: recruitment_drive_position_fall_25
+    custom_ui: False
+    title: Open positions
+    default_columns: [hire_role, hire_position_location, project_name, project_location, language]
+    detail_columns: [hire_role, hire_predoc_ra, number_role, hire_position_location, project_name, project_blurb, project_location, pi_name, position_details_others, hire_desired_date, language, language_stata, language_r, language_python, language_scto, language_bigdata, language_other]
+    
+    column_labels:
+      file: "/Users/mvisintini/Library/CloudStorage/OneDrive-WBG/Documents/Github/0-whitelabel-app/instances/application_dash/survey.xlsx"
+      sheet: "survey"               
+      column_header_col: "name"       
+      column_label_col: "label"    
+    
+    scto_cleaning:
+      enabled: true
+      definition_file: "/Users/mvisintini/Library/CloudStorage/OneDrive-WBG/Documents/Github/0-whitelabel-app/instances/application_dash/survey.xlsx"  
+      survey_sheet: "survey"
+      choices_sheet: "choices"
+     
+
