@@ -1,3 +1,5 @@
+row = None
+
 role_suffix_map = {
     "RA": "_ra",
     "FC": "_fc",
