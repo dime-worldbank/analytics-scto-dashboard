@@ -337,7 +337,7 @@ def run_specific_scripts(df):
                 print(f"[Info] Running script: {path}")
                 with open(path) as f:
                     code = f.read()
-                local_vars = {'df': df}
+                local_vars = {'df': df, 'pycountry': pycountry}
                 exec(code, globals(), local_vars)
                 df = local_vars['df']  # Update df from script
             except Exception as e:
