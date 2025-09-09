@@ -56,6 +56,7 @@ df = df.replace("‚Äã", "", regex=True)
 df = df.replace("√©", "é", regex=True)
 df.loc[df["pi_add"] == "No", "pi_name"] = ""
 
+df = df.sort_values(by="project_name", descending = True)
 
 
 print(list(df.columns))
