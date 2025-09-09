@@ -2,7 +2,7 @@ info:
   title: DIME Recruitment Dashboard
   description: |
     ## DIME STC Recruitment Drive
-    DIME is now hiring **Short Term Consultants (STCs)** to work as Research Assistants and Field Coordinators for **15 open positions across 12 projects.** These roles provide recent master's-level graduates and working professionals opportunities to improve public policy on the basis of better data and research.  
+    DIME is now hiring **Short Term Consultants (STCs)** to work as Research Assistants and Field Coordinators for **16 open positions across 13 projects.** These roles provide recent master's-level graduates and working professionals opportunities to improve public policy on the basis of better data and research.  
 
     Eligible candidates must hold at least a master's-level degree in economics, public policy or a related field. Additional impact evaluation experience is preferred, but not required. [Click here](#) to see detailed Terms of Reference for these positions.  
 
@@ -14,7 +14,7 @@ info:
     ---
     ## How do I use this dashboard to apply?
     1. Navigate to the **Open Positions** tab to see details about each of the open positions, as well as required skills.  
-    2. After you have identified the roles of your interest, you will need to submit your application using [this application form](#).  
+    2. After you have identified the roles of your interest, you will need to submit your application using [this application form](https://survey.wb.surveycto.com/collect/dime_stc_application_fall2025?caseid=).  
 
     ---
     ## About DIME
@@ -37,14 +37,14 @@ tabs:
     detail_columns: [hire_role, hire_predoc_ra, number_role, hire_position_location, project_name, project_blurb, project_location, pi_name, position_details_others, hire_desired_date, language, language_stata, language_r, language_python, language_scto, language_bigdata, language_other]
     
     column_labels:
-      file: "/Users/mvisintini/Library/CloudStorage/OneDrive-WBG/Documents/Github/0-whitelabel-app/instances/application_dash/survey.xlsx"
+      file: "survey.xlsx"
       sheet: "survey"               
       column_header_col: "name"       
       column_label_col: "label"    
     
     scto_cleaning:
       enabled: true
-      definition_file: "/Users/mvisintini/Library/CloudStorage/OneDrive-WBG/Documents/Github/0-whitelabel-app/instances/application_dash/survey.xlsx"  
+      definition_file: "survey.xlsx"  
       survey_sheet: "survey"
       choices_sheet: "choices"
      

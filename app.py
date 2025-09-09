@@ -111,8 +111,7 @@ with tabs[1]:
                 st.rerun()
 
         with button_cols[-1]:
-            if st.button("Apply", type="secondary", width="stretch"):
-                st.rerun()
+            st.link_button(label="Apply", url="https://survey.wb.surveycto.com/collect/dime_stc_application_fall2025?caseid=", type="secondary", width="stretch")
 
         if tab_config.get("custom_ui", False):
             key = tab_config.get("key")
