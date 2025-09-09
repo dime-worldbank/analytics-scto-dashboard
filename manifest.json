@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "locale": "en_US.UTF-8",
+  "metadata": {
+    "appmode": "python-streamlit",
+    "entrypoint": "app"
+  },
+  "python": {
+    "version": "3.11.9",
+    "package_manager": {
+      "name": "pip",
+      "version": "25.2",
+      "package_file": "requirements.txt"
+    }
+  },
+  "files": {
+    "requirements.txt": {
+      "checksum": "fd8ea66463e277213e682f253e55b394"
+    },
+    ".DS_Store": {
+      "checksum": "9dcbb29a332182eaf7ec38005795a5e1"
+    },
+    ".env": {
+      "checksum": "b9d1c0fdbdc1ee8ba09aaa9eec2bb319"
+    },
+    ".gitignore": {
+      "checksum": "c2e0f19878766057bc7415125b9967ac"
+    },
+    "README.md": {
+      "checksum": "c7ba08580ac84850d2b29da4a6db9d6b"
+    },
+    "app.py": {
+      "checksum": "cb1325869e8ac9b1f8b630177dbcd973"
+    },
+    "config.yaml": {
+      "checksum": "e7b070c90bb985333795ea71037c7ae3"
+    },
+    "custom_ui/.DS_Store": {
+      "checksum": "43135fa7f755fa3fc56fc6cc89545169"
+    },
+    "pysurveycto.py": {
+      "checksum": "68639cfc7e6e40dc0a91d5c29787ef0a"
+    },
+    "runtime.txt": {
+      "checksum": "c7a7c7a69332debc92c10e640991d728"
+    },
+    "specific_scripts/.Rhistory": {
+      "checksum": "e55a0a0ef202dc2e8cc4b03a5216b5d2"
+    },
+    "specific_scripts/process.py": {
+      "checksum": "368b3373f0786d9a192a5fe7daf0ff79"
+    },
+    "survey.xlsx": {
+      "checksum": "bdcc9baed88af32991d435ba729b6fc4"
+    },
+    "utils.py": {
+      "checksum": "bb467ee6cc72fe4899511905825b0a7d"
+    }
+  }
+}
