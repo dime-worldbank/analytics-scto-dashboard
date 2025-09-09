@@ -216,7 +216,8 @@ with tabs[1]:
 
         # Configure AgGrid
         gb = GridOptionsBuilder.from_dataframe(visible_df)
-        gb.configure_default_column(filter=True, sortable=True, resizable=True, width=300)
+        #gb.configure_default_column(filter=True, sortable=True, resizable=True, width=300)
+        gb.configure_default_column(filter=True, sortable=True, resizable=True)
         gb.configure_column("row_index", hide=True)
         gb.configure_grid_options(
             domLayout='normal',
