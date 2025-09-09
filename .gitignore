@@ -141,3 +141,4 @@ tokens/
 !custom_ui/**
 !runtime.txt
 !dataset.csv
+!.streamlit/**
