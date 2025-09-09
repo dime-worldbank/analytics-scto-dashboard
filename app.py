@@ -216,14 +216,18 @@ with tabs[1]:
 
         # Configure AgGrid
         gb = GridOptionsBuilder.from_dataframe(visible_df)
-        #gb.configure_default_column(filter=True, sortable=True, resizable=True, width=300)
+        
+        for col in visible_df.columns:
+            if col != "row_index":
+                gb.configure_column(col, minWidth=300)
+
         gb.configure_default_column(filter=True, sortable=True, resizable=True)
         gb.configure_column("row_index", hide=True)
         gb.configure_grid_options(
             domLayout='normal',
             rowSelection='single',
             quickFilter=True,
-            paginationPageSize=100,
+            paginationPageSize=20,
             pagination=True
         )
         grid_options = gb.build()
