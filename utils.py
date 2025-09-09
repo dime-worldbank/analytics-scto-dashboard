@@ -41,7 +41,7 @@ def connect_scto():
     password = os.environ.get("SCTO_PASSWORD")
 
     if not all([server, username, password]):
-        raise EnvironmentError("Missing one or more required SurveyCTO environment variables: SCTO_SERVER, SCTO_USERNAME, SCTO_PASSWORD")
+        return None
 
     return pcto.SurveyCTOObject(server, username, password)
 
@@ -74,28 +74,49 @@ def load_processed_dataset(tab_config):
             - label_info (dict): Metadata for select_one/select_multiple field labeling used for display and filtering.
     """
 
-    try:
-        scto = connect_scto()
-        source = tab_config["source"]
-        source_type = tab_config.get("source_type", "dataset")
+    #try:
+    scto = connect_scto()
+    source = tab_config["source"]
+    source_type = tab_config.get("source_type", "dataset")
 
-        if source_type == "dataset":
-            data_str = scto.get_server_dataset(source)
-        elif source_type == "form":
-            data_str = scto.get_form_data(source)
-        else:
-            raise ValueError(f"Unknown source type: {source_type}")
+    if scto:
+        try:
+            if source_type == "dataset":
+                data_str = scto.get_server_dataset(source)
+            elif source_type == "form":
+                data_str = scto.get_form_data(source)
+            else:
+                raise ValueError(f"Unknown source type: {source_type}")
+
+            df = pd.read_csv(StringIO(data_str.strip()))
+        except Exception as e:
+            st.warning(f"[WARNING] Could not fetch or parse SurveyCTO data: {e}")
+            return df, column_labels, label_info
+    else:
+        try:
+            df = pd.read_csv("dataset.csv")
+        except Exception as e:
+            st.error(f"[ERROR] Could not load fallback dataset.xlsx: {e}")
+            return df, column_labels, label_info
+
+    #     if source_type == "dataset":
+    #         data_str = scto.get_server_dataset(source)
+    #     elif source_type == "form":
+    #         data_str = scto.get_form_data(source)
+    #     else:
+    #         raise ValueError(f"Unknown source type: {source_type}")
 
 
-    except Exception as e:
-        st.warning(f"[WARNING] Could not fetch from SurveyCTO: {e}")
-        return pd.DataFrame(), {}, {}
+    # except Exception as e:
+    #     st.warning(f"[WARNING] Could not fetch from SurveyCTO: {e}")
+    #     return pd.DataFrame(), {}, {}
+    
 
-    try:
-        df = pd.read_csv(StringIO(data_str.strip()))
-    except Exception as e:
-        st.error(f"[ERROR] Could not parse downloaded CSV: {e}")
-        return pd.DataFrame(), {}, {}
+    # try:
+    #     df = pd.read_csv(StringIO(data_str.strip()))
+    # except Exception as e:
+    #     st.error(f"[ERROR] Could not parse downloaded CSV: {e}")
+    #     return pd.DataFrame(), {}, {}
 
     filter_config = tab_config.get("filter")
     if filter_config:
