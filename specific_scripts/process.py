@@ -19,6 +19,8 @@ column_prefixes = ['number_role', 'hire_position_location', 'hire_desired_date',
 
 long_rows = []
 
+df.sort_values(by="project_name", ascending = True)
+
 for _, row in df.iterrows():
     roles = str(row.get("hire_role", "")).split()
 
@@ -55,8 +57,6 @@ df = df.replace("‚Äô", "'", regex=True)
 df = df.replace("‚Äã", "", regex=True)
 df = df.replace("√©", "é", regex=True)
 df.loc[df["pi_add"] == "No", "pi_name"] = ""
-
-df = df.sort_values(by="project_name", descending = True)
 
 
 print(list(df.columns))
