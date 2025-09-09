@@ -140,3 +140,4 @@ tokens/
 # Unignore other useful folders for dashboards or UIs
 !custom_ui/**
 !runtime.txt
+!dataset.csv
