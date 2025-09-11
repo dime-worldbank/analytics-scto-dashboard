@@ -47,7 +47,7 @@ df = pd.DataFrame(long_rows)
 
 df["hire_position_location"] = df["hire_position_location"].apply(
     lambda text: ", ".join([
-        name for name in sorted([c.name for c in pycountry.countries] + ["Global"], key=lambda x: -len(x)) if name in str(text)
+        name for name in sorted([c.name for c in pycountry.countries if c.name != "Sudan"] + ["Global"], key=lambda x: -len(x)) if name in str(text)
     ])
 )
 
